@@ -6,9 +6,12 @@ class Usuario:
 
     def hacer_deposito(self, amount):
         self.balance_cuenta += amount
+        return self
         
     def hacer_retiro(self,amount):
         self.balance_cuenta -= amount
+        return self
+        
 
 # Crear instancias de la clase Usuario
 guido = Usuario("Guido", "guido@example.com")
@@ -20,22 +23,11 @@ print(monty.name)  # Salida: Monty
 print(vicente.name)  # Salida: Vicente
 
 
-guido.hacer_deposito(100)
-guido.hacer_deposito(200)
-guido.hacer_deposito(100)
-guido.hacer_retiro(200)
+guido.hacer_deposito(100).hacer_deposito(200).hacer_deposito(100).hacer_retiro(200)
 
-monty.hacer_deposito(350)
-monty.hacer_deposito(100)
-monty.hacer_retiro(200)
-monty.hacer_retiro(200)
+monty.hacer_deposito(350).hacer_deposito(100).hacer_retiro(200).hacer_retiro(200)
 
-vicente.hacer_deposito(700)
-vicente.hacer_retiro(200)
-vicente.hacer_retiro(200)
-vicente.hacer_retiro(200)
-
-
+vicente.hacer_deposito(700).hacer_retiro(200).hacer_retiro(200).hacer_retiro(200)
 
 print(guido.balance_cuenta) 
 print(monty.balance_cuenta)  
