@@ -7,28 +7,24 @@ class Usuario:
     def hacer_deposito(self, amount):
         self.balance_cuenta += amount
         return self
-        
-    def hacer_retiro(self,amount):
+
+    def hacer_retiro(self, amount):
         self.balance_cuenta -= amount
         return self
-        
+
+    def mostra_balance_usuario(self):
+        print(f"Usuario: {self.name} - {self.balance_cuenta}")
+
 
 # Crear instancias de la clase Usuario
-guido = Usuario("Guido", "guido@example.com")
-monty = Usuario("Monty", "monty@example.com")
-vicente = Usuario("Vicente" , "vicente_chp@gmail.com")
+usuario1 = Usuario("Guido", "guido@example.com")
+usuario1.hacer_deposito(100).hacer_deposito(200).hacer_deposito(
+    100).hacer_retiro(200).mostra_balance_usuario()
 
-print(guido.name)  # Salida: Guido
-print(monty.name)  # Salida: Monty
-print(vicente.name)  # Salida: Vicente
+usuario2 = Usuario("Monty", "monty@example.com")
+usuario2.hacer_deposito(350).hacer_deposito(100).hacer_retiro(
+    200).hacer_retiro(200).mostra_balance_usuario()
 
-
-guido.hacer_deposito(100).hacer_deposito(200).hacer_deposito(100).hacer_retiro(200)
-
-monty.hacer_deposito(350).hacer_deposito(100).hacer_retiro(200).hacer_retiro(200)
-
-vicente.hacer_deposito(700).hacer_retiro(200).hacer_retiro(200).hacer_retiro(200)
-
-print(guido.balance_cuenta) 
-print(monty.balance_cuenta)  
-print(vicente.balance_cuenta) 
+usuario3 = Usuario("Vicente", "vicente_chp@gmail.com")
+usuario3.hacer_deposito(700).hacer_retiro(200).hacer_retiro(
+    200).hacer_retiro(200).mostra_balance_usuario()
